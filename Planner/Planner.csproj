@@ -22,14 +22,30 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app.css" />
+    <Content Include="css\bootstrap.min.css" />
     <Content Include="index.html" />
+    <Content Include="scripts\js\passwordconfirm.js" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="app.ts" />
+    <TypeScriptCompile Include="scripts\ts\Budget.ts" />
+    <TypeScriptCompile Include="scripts\ts\Expenditure.ts" />
+    <TypeScriptCompile Include="scripts\ts\ExpenseType.ts" />
+    <TypeScriptCompile Include="scripts\ts\Household.ts" />
+    <TypeScriptCompile Include="scripts\ts\Income.ts" />
+    <TypeScriptCompile Include="scripts\ts\IncomeType.ts" />
+    <TypeScriptCompile Include="scripts\ts\PlannerViewModel.ts" />
+    <TypeScriptCompile Include="scripts\ts\Student.ts" />
+    <TypeScriptCompile Include="scripts\ts\StudentExpense.ts" />
+    <TypeScriptCompile Include="scripts\ts\StudentIncome.ts" />
+    <TypeScriptCompile Include="scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\knockout\knockout.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\knockout\tests\jasmine.extensions.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\typescript\typescript.d.ts" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="tsconfig.json" />
+    <Content Include="packages.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -37,6 +53,7 @@
       <DependentUpon>web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
   </PropertyGroup>

@@ -1,15 +1,704 @@
 ﻿<!DOCTYPE html>
-
-<html lang="en">
+<html lang="en-gb">
 <head>
+    <title>Student Budget Planner</title>
     <meta charset="utf-8" />
-    <title>TypeScript HTML App</title>
-    <link rel="stylesheet" href="app.css" type="text/css" />
-    <script src="app.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
-    <h1>TypeScript HTML App</h1>
+    <div class="container">
+        <header>
+            <h1 class="display-3">Student Budget Planner</h1>
+            <p class="lead">
+                Get your finances in order while you study with this online budgeting tool
+            </p>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-success mb-3">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" style="">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    <div id="content"></div>
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About this app</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sign in</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sign up</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">My budget plan</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Begin page content -->
+        <main role="main" class="container">
+            <div class="row">
+                <div class="col-6 col-lg-3">
+                    <!-- Vertical nav -->
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Overview</a>
+                        <a class="nav-link" id="v-pills-planner-tab" data-toggle="pill" href="#v-pills-planner" role="tab" aria-controls="v-pills-planner" aria-selected="false">Budget planner</a>
+                        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Student profile</a>
+                        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Household settings</a>
+                    </div>
+                </div>
+
+                <!-- Nav content -->
+                <div class="col-12 col-sm-6 col-lg-9">
+
+                    <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                            <h1>Overview</h1>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-planner" role="tabpanel" aria-labelledby="v-pills-planner-tab">
+
+                            <!-- Budget planner section -->
+                            <h1>Budget planner</h1>
+
+                            <p>This is where you can define your total income and expenses, and see how much you're left with.</p>
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="income-tab" data-toggle="tab" href="#income" role="tab" aria-controls="income" aria-selected="true">Income</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="outgoings-tab" data-toggle="tab" href="#outgoings" role="tab" aria-controls="outgoings" aria-selected="false">Outgoings</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="results-tab" data-toggle="tab" href="#results" role="tab" aria-controls="results" aria-selected="false">Results</a>
+                                </li>
+                            </ul>
+                            <!--Planner content-->
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="income" role="tabpanel" aria-labelledby="income-tab">
+                                    <h3>Income</h3>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="dropdown">
+                                                <button class="btn btn-primary dropdown-toggle" type="button" id="income" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Display amounts per:
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="income">
+                                                    <a class="dropdown-item" href="#">Week</a>
+                                                    <a class="dropdown-item" href="#">Month</a>
+                                                    <a class="dropdown-item" href="#">Quarter</a>
+                                                    <a class="dropdown-item" href="#">Term</a>
+                                                    <a class="dropdown-item" href="#">Year</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            Showing <span>monthly</span> amounts
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <table class="table table-hover">
+                                        <caption>
+                                            Total income: £<span>1029.90</span>
+                                        </caption>
+                                        <thead>
+                                            <tr class="table-success">
+                                                <th scope="col" class="text-center">
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="selectAll" name="selectAll">
+                                                        <label class="sr-only form-check-label" for="selectAll">Select all</label>
+                                                    </div>
+                                                </th>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">Type</th>
+                                                <th scope="col">Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row" class="text-center">
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="select1" name="select1">
+                                                        <label class="sr-only form-check-label" for="select1">Select</label>
+                                                    </div>
+                                                </th>
+                                                <td>Maintainence loan</td>
+                                                <td>Student finance</td>
+                                                <td>£357.14</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="text-center">
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="select2" name="select2">
+                                                        <label class="sr-only form-check-label" for="select2">Select</label>
+                                                    </div>
+                                                </th>
+                                                <td>Maintainence grant</td>
+                                                <td>Student finance</td>
+                                                <td>£290.25</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="text-center">
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="select3" name="select3">
+                                                        <label class="sr-only form-check-label" for="select3">Select</label>
+                                                    </div>
+                                                </th>
+                                                <td>Working Tax Credit</td>
+                                                <td>State benefit</td>
+                                                <td>£382.51</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <button class="btn btn-outline-success" data-toggle="modal" data-target="#addIncome">Add income</button> <button class="btn btn-outline-danger">Remove income</button>
+                                </div>
+                                <div class="tab-pane fade" id="outgoings" role="tabpanel" aria-labelledby="outgoings-tab">
+                                    <h3>Outgoings</h3>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="dropdown">
+                                                <button class="btn btn-primary dropdown-toggle" type="button" id="income" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Display amounts per:
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="income">
+                                                    <a class="dropdown-item" href="#">Week</a>
+                                                    <a class="dropdown-item" href="#">Month</a>
+                                                    <a class="dropdown-item" href="#">Quarter</a>
+                                                    <a class="dropdown-item" href="#">Term</a>
+                                                    <a class="dropdown-item" href="#">Year</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            Showing <span>monthly</span> amounts
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <table class="table table-hover">
+                                        <caption>
+                                            Total outgoings: £<span>1029.90</span>
+                                        </caption>
+                                        <thead>
+                                            <tr class="table-danger">
+                                                <th scope="col" class="text-center">
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="selectAll" name="selectAll">
+                                                        <label class="sr-only form-check-label" for="selectAll">Select</label>
+                                                    </div>
+                                                </th>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">Type</th>
+                                                <th scope="col">Amount</th>
+                                                <th scope="col">Who pays?</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row" class="text-center">
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="select1" name="select1">
+                                                        <label class="sr-only form-check-label" for="select1">Select</label>
+                                                    </div>
+                                                </th>
+                                                <td>Rent</td>
+                                                <td>Rent</td>
+                                                <td>£357.14</td>
+                                                <td>Just me</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="text-center">
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="select2" name="select2">
+                                                        <label class="sr-only form-check-label" for="select2">Select</label>
+                                                    </div>
+                                                </th>
+                                                <td>Electric</td>
+                                                <td>Utilities</td>
+                                                <td>£290.25</td>
+                                                <td>Everyone</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="text-center">
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="select3" name="select3">
+                                                        <label class="sr-only form-check-label" for="select3">Select</label>
+                                                    </div>
+                                                </th>
+                                                <td>Food shopping</td>
+                                                <td>Groceries</td>
+                                                <td>£382.51</td>
+                                                <td>Just me</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <button class="btn btn-outline-success" data-toggle="modal" data-target="#addExpense">Add expense</button> <button class="btn btn-outline-danger">Remove expense</button>
+                                </div>
+                                <div class="tab-pane fade" id="results" role="tabpanel" aria-labelledby="results-tab">
+                                    <h3>Results</h3>
+                                </div>
+                            </div><!--/planner content-->
+
+                        </div><!--/planner section-->
+                        <!--Profile section-->
+                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                            <h1>Student profile</h1>
+                            <p>
+                                Please complete as much of this section as possible. The choices entered here will be used in budget calculations.
+                            </p>
+                            <div id="accordion">
+                                <form>
+                                    <!-- General details -->
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a class="card-link" data-toggle="collapse" data-parent="#accordion" href="#generalDetails">
+                                                General details
+                                            </a>
+                                        </div>
+                                        <div id="generalDetails" class="collapse show">
+                                            <div class="card-body">
+                                                <fieldset>
+                                                    <div class="form-group">
+                                                        <label for="studentID">Student ID</label>
+                                                        <input name="studentID" id="studentID" class="form-control" aria-describedby="studentIDHelp" type="text" />
+                                                        <small id="studentIDHelp" class="form-text text-muted">
+                                                            This is the ID number assigned by your college or university
+                                                        </small>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="fName">First name</label>
+                                                        <input name="fName" id="fName" class="form-control" type="text" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="sName">Last / family name</label>
+                                                        <input name="sName" id="sName" class="form-control" type="text" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="studyPlace">Place of study</label>
+                                                        <select class="custom-select" name="studyPlace" id="studyPlace">
+                                                            <option selected value="">-- Where in the UK are you studying? --</option>
+                                                            <option value="england">England</option>
+                                                            <option value="scotland">Scotland</option>
+                                                            <option value="wales">Wales</option>
+                                                            <option value="ireland">N Ireland</option>
+                                                        </select>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Home address -->
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a class="collapsed card-link" data-toggle="collapse" data-parent="#accordion" href="#homeAddress">
+                                                Home address
+                                            </a>
+                                        </div>
+                                        <div id="homeAddress" class="collapse">
+                                            <div class="card-body">
+
+                                                <fieldset>
+                                                    <div class="form-group">
+                                                        <label for="add1">Address 1</label>
+                                                        <input name="add1" id="add1" class="form-control" type="text" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="add2">Address 2</label>
+                                                        <input name="add2" id="add2" class="form-control" type="text" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="city">City</label>
+                                                        <input name="city" id="city" class="form-control" type="text" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="postcode">Postcode</label>
+                                                        <input name="postcode" id="postcode" class="form-control" type="text" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="state">State / Province</label>
+                                                        <input name="state" id="state" class="form-control" type="text" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="country">Country</label>
+
+                                                        <select class="custom-select" name="country" id="country" data-bind="foreach: country">
+                                                            <option data-bind="text: name"></option>
+                                                        </select>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Account details -->
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a class="collapsed card-link" data-toggle="collapse" data-parent="#accordion" href="#accountDetails">
+                                                Account details
+                                            </a>
+                                        </div>
+                                        <div id="accountDetails" class="collapse">
+                                            <div class="card-body">
+                                                <fieldset>
+                                                    <div class="form-group">
+                                                        <label for="email">Email address</label>
+                                                        <input class="form-control" type="email" name="email" id="email" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="password">New password</label>
+                                                        <input class="form-control" type="password" name="password" id="password" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="cPword">Confirm password</label>
+                                                        <input class="form-control" type="password" name="cPword" id="cPword" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="acType" aria-describedby="accountHelp">Account type: </label>
+                                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                            <label class="btn btn-primary">
+                                                                <input type="radio" name="acType" id="individual" value="individual" autocomplete="off"> Individual
+                                                            </label>
+                                                            <label class="btn btn-primary active">
+                                                                <input type="radio" checked="" name="acType" id="household" value="household" autocomplete="off"> Household
+                                                            </label>
+                                                        </div>
+                                                        <small id="accountHelp" class="form-text text-muted">
+                                                            If you are the only household member, choose "Individual"; otherwise choose "Household"
+                                                        </small>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-md-4">
+                                            <button class="btn btn-primary" id="stSave" name="stSave" type="submit">Save</button>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <button class="btn" type="reset">Reset</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div><!-- /profile accordion -->
+                        </div><!--/profile section-->
+                        <!--Household section-->
+                        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                            <h1>Household settings</h1>
+                            <p>
+                                Please complete as much of this section as possible. The choices entered here will be used in budget calculations.
+                            </p>
+                            <form>
+                                <div id="accordion">
+
+                                    <!-- General details -->
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a class="card-link" data-toggle="collapse" data-parent="#accordion" href="#householdDetails">
+                                                General details
+                                            </a>
+                                        </div>
+                                        <div id="householdDetails" class="collapse show">
+                                            <div class="card-body">
+                                                <fieldset>
+                                                    <div class="form-group">
+                                                        <label for="householdName">Household name</label>
+                                                        <input name="householdName" id="householdName" class="form-control" aria-describedby="householdNameHelp" type="text" />
+                                                        <small id="householdNameHelp" class="form-text text-muted">
+                                                            Give your household a name so you can identify it later
+                                                        </small>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="members">List of members</label>
+                                                        <table class="table table-hover">
+                                                            <caption>Number of students in household: <span>3</span></caption>
+                                                            <thead>
+                                                                <tr>
+                                                                    <th scope="col" class="text-center">
+                                                                        <div class="form-check">
+                                                                            <input type="checkbox" class="form-check-input" id="selectAll">
+                                                                            <label class="sr-only form-check-label" for="selectAll">Select all</label>
+                                                                        </div>
+
+                                                                    </th>
+                                                                    <th scope="col">First name</th>
+                                                                    <th scope="col">Last name</th>
+                                                                    <th scope="col">Email</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th scope="row" class="text-center">
+                                                                        <div class="form-check">
+                                                                            <input type="checkbox" class="form-check-input" id="select1" name="select1">
+                                                                            <label class="sr-only form-check-label" for="select1">Select</label>
+                                                                        </div>
+                                                                    </th>
+                                                                    <td>Mark</td>
+                                                                    <td>Otto</td>
+                                                                    <td>@mdo</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row" class="text-center">
+                                                                        <div class="form-check">
+                                                                            <input type="checkbox" class="form-check-input" id="select2" name="select2">
+                                                                            <label class="sr-only form-check-label" for="select2">Select</label>
+                                                                        </div>
+                                                                    </th>
+                                                                    <td>Jacob</td>
+                                                                    <td>Thornton</td>
+                                                                    <td>@fat</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row" class="text-center">
+                                                                        <div class="form-check">
+                                                                            <input type="checkbox" class="form-check-input" id="select3" name="select3">
+                                                                            <label class="sr-only form-check-label" for="select3">Select</label>
+                                                                        </div>
+                                                                    </th>
+                                                                    <td colspan="2">Larry the Bird</td>
+                                                                    <td>@twitter</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <a href="#" class="btn btn-outline-success" data-toggle="modal" data-target="#addStudent">Add student</a>  <a href="#" class="btn btn-outline-danger">Remove student</a>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Term address -->
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a class="collapsed card-link" data-toggle="collapse" data-parent="#accordion" href="#termAddress">
+                                                Term address
+                                            </a>
+                                        </div>
+
+                                        <div id="termAddress" class="collapse">
+                                            <div class="card-body">
+                                                <fieldset>
+                                                    <div class="form-group">
+                                                        <label for="add1">Address 1</label>
+                                                        <input name="add1" id="add1" class="form-control" type="text" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="add2">Address 2</label>
+                                                        <input name="add2" id="add2" class="form-control" type="text" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="city">City</label>
+                                                        <input name="city" id="city" class="form-control" type="text" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="postcode">Postcode</label>
+                                                        <input name="postcode" id="postcode" class="form-control" type="text" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="state">State / Province</label>
+                                                        <input name="state" id="state" class="form-control" type="text" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="country">Country</label>
+                                                        <select class="custom-select" name="country" id="country">
+                                                            <option selected value="">-- Choose country --</option>
+                                                            <option value="england">England</option>
+                                                            <option value="scotland">Scotland</option>
+                                                            <option value="wales">Wales</option>
+                                                            <option value="ireland">N Ireland</option>
+                                                        </select>
+                                                    </div>
+                                                </fieldset>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <fieldset>
+                                        <div class="row mt-3">
+                                            <div class="col-md-4">
+                                                <button class="btn btn-primary" id="hhSave" name="hhSave" type="submit">Save</button>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <button class="btn" type="reset">Reset</button>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <footer class="footer text-center mt-5">
+            <div class="container">
+                <span class="text-muted">&copy; Sam Phoenix 2018. All rights reserved.</span>
+            </div>
+        </footer>
+    </div><!--/container-->
+    <!-- Form modals -->
+    <!-- Add / edit income -->
+    <div class="modal fade" id="addIncome" tabindex="-1" role="dialog" aria-labelledby="addIncomeLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addIncomeLabel">Add income</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="incomeType">Income type</label>
+                                <select class="form-control" name="incomeType" id="incomeType">
+                                    <option></option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="incomeName">Income name</label>
+                                <input type="text" class="form-control" placeholder="Give a name for this form of income" />
+                            </div>
+                            <div class="form-group">
+                                <label for="incomeFreq">How often is this paid?</label>
+                                <select class="form-control" name="incomeFreq" id="incomeFreq">
+                                    <option value="Weekly">Weekly</option>
+                                    <option value="Monthly">Monthly</option>
+                                    <option value="Quarterly">Quarterly</option>
+                                    <option value="Termly">Termly</option>
+                                    <option value="Yearly">Yearly</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="incomeAmount">Amount paid</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">£</div>
+                                    </div>
+                                    <input type="text" class="form-control" name="incomeAmount" id="incomeAmount" />
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" name="incomeSave" id="incomeSave" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Add / edit expense -->
+    <div class="modal fade" id="addExpense" tabindex="-1" role="dialog" aria-labelledby="addExpenseLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addExpenseLabel">Add expense</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="expenseType">Expense type</label>
+                                <select class="form-control" name="expenseType" id="expenseType">
+                                    <option></option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="expenseName">Expense name</label>
+                                <input type="text" class="form-control" placeholder="Give a name for this form of expense" />
+                            </div>
+                            <div class="form-group">
+                                <label for="expenseFreq">How often is this paid?</label>
+                                <select class="form-control" name="expenseFreq" id="expenseFreq">
+                                    <option value="Weekly">Weekly</option>
+                                    <option value="Monthly">Monthly</option>
+                                    <option value="Quarterly">Quarterly</option>
+                                    <option value="Termly">Termly</option>
+                                    <option value="Yearly">Yearly</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="expenseAmount">Amount paid</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">£</div>
+                                    </div>
+                                    <input type="text" class="form-control" name="expenseAmount" id="expenseAmount" />
+                                </div>
+                                <small>Please enter the <b>total</b> amount due, no matter how you split the cost (more on that below) </small>
+                            </div>
+                            <div class="form-group">
+                                <label for="isCommunal">Who foots the bill - everyone or just you?</label>
+                                <select class="form-control" name="isCommunal" id="isCommunal">
+                                    <option value="1">Everyone</option>
+                                    <option value="0">Just me</option>
+                                </select>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" name="expenseSave" id="expenseSave" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add / edit student -->
+    <div class="modal fade" id="addStudent" tabindex="-1" role="dialog" aria-labelledby="addStudentLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addStudentLabel">Add student</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="studentSearch">Find a student to add to your household:</label>
+                            <div class="input-group">
+                                <input type="search" class="form-control" aria-label="Search students">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button">Search</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+    <script src="scripts/js/passwordconfirm.js"></script><!-- Password confirm script found for last advanced web assignment -->
 </body>
 </html>
