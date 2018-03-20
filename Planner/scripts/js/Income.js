@@ -1,24 +1,59 @@
-/// <reference path="../typings/jquery/jquery.d.ts" />
-/// <reference path="../typings/knockout/knockout.d.ts" />
-/// <reference path="budget.ts" />
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var Income = (function (_super) {
-    __extends(Income, _super);
-    function Income(id, name, typeID, weeklyAmt, monthlyAmt, quartAmt, termlyAmt, yearlyAmt) {
-        _super.call(this, id, name, typeID, weeklyAmt, monthlyAmt, quartAmt, termlyAmt, yearlyAmt);
-        this.id = ko.observable(id);
-        this.name = ko.observable(name);
-        this.typeID = ko.observable(typeID);
-        this.weeklyAmt = ko.observable(weeklyAmt);
-        this.monthlyAmt = ko.observable(monthlyAmt);
-        this.quartAmt = ko.observable(quartAmt);
-        this.termlyAmt = ko.observable(termlyAmt);
-        this.yearlyAmt = ko.observable(yearlyAmt);
+class Income {
+    constructor(inID, inName, inTypeID, wk, mth, qt, tm, yr) {
+        this.id = inID;
+        this.name = inName;
+        this.typeID = inTypeID;
+        this.weeklyAmt = wk;
+        this.monthlyAmt = mth;
+        this.termlyAmt = tm;
+        this.quartAmt = qt;
+        this.yearlyAmt = yr;
     }
-    return Income;
-}(Budget));
+    // Properties
+    getID() {
+        return this.id;
+    }
+    getName() {
+        return this.name;
+    }
+    setName(value) {
+        return this.name = value;
+    }
+    getTypeID() {
+        return this.typeID;
+    }
+    setTypeID(value) {
+        return this.typeID = value;
+    }
+    getWklyAmt() {
+        return this.weeklyAmt;
+    }
+    setWklyAmt(value) {
+        return this.weeklyAmt = value;
+    }
+    getMthlyAmt() {
+        return this.monthlyAmt;
+    }
+    setMthlyAmt(value) {
+        return this.monthlyAmt = value;
+    }
+    getQtlyAmt() {
+        return this.quartAmt;
+    }
+    setQtlyAmt(value) {
+        return this.quartAmt = value;
+    }
+    getTmlyAmt() {
+        return this.termlyAmt;
+    }
+    setTmlyAmt(value) {
+        return this.termlyAmt = value;
+    }
+    getYrlyAmt() {
+        return this.yearlyAmt;
+    }
+    setYrlyAmt(value) {
+        return this.yearlyAmt = value;
+    }
+}
 //# sourceMappingURL=Income.js.map

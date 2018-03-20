@@ -1,12 +1,11 @@
 ﻿/// <reference path="../typings/jquery/jquery.d.ts" />
-/// <reference path="../typings/knockout/knockout.d.ts" />
 
 class StudentExpense {
-    studentID: KnockoutObservable<number>;
-    expenseID: KnockoutObservable<number>;
+    studentID: string;
+    expenseID: number;
 
-    constructor(studentID: number, expenseID: number) {
-        this.studentID = ko.observable(studentID);
-        this.expenseID = ko.observable(expenseID);
+    constructor(studentID: string, expenseID: number) {
+        this.studentID = studentID;
+        this.expenseID = expenseID;
     }
 }

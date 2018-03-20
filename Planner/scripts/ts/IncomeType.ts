@@ -1,12 +1,22 @@
 ﻿/// <reference path="../typings/jquery/jquery.d.ts" />
-/// <reference path="../typings/knockout/knockout.d.ts" />
 
-class IncomeType {
-    id: KnockoutObservable<number>;
-    name: KnockoutObservable<string>;
+export class IncomeType {
+    id: number;
+    name: string;
 
-    constructor(id: number, name: string) {
-        this.id = ko.observable(id);
-        this.name = ko.observable(name);
+    constructor(jsonData: any) {
+        $.extend(this, jsonData);
+    }
+
+    getID() {
+        return this.id;
+    }
+
+    getName() {
+        return this.name;
+    }
+
+    setName(value) {
+        return this.name = value;
     }
 }

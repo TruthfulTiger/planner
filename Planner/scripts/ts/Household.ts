@@ -1,23 +1,22 @@
 ﻿/// <reference path="../typings/jquery/jquery.d.ts" />
-/// <reference path="../typings/knockout/knockout.d.ts" />
 
 class Household {
-    id: KnockoutObservable<number>;
-    name: KnockoutObservable<string>;
-    address1: KnockoutObservable<string>;
-    address2: KnockoutObservable<string>;
-    city: KnockoutObservable<string>;
-    postcode: KnockoutObservable<string>;
-    country: KnockoutObservable<string>;
+    id: number;
+    name: string;
+    address1: string;
+    address2: string;
+    city: string;
+    postcode: string;
+    country: string;
 
     constructor(id: number, name: string, address1: string, address2: string, city: string, postcode: string, country: string) {
-        this.id = ko.observable(id);
-        this.name = ko.observable(name);
-        this.address1 = ko.observable(address1);
-        this.address2 = ko.observable(address2);
-        this.city = ko.observable(city);
-        this.postcode = ko.observable(postcode);
-        this.country = ko.observable(country);
+        this.id = id;
+        this.name = name;
+        this.address1 = address1;
+        this.address2 = address2;
+        this.city = city;
+        this.postcode = postcode;
+        this.country = country;
     }
 }
 
